@@ -113,26 +113,26 @@ export const column = [
 		header: "Time",
 		footer: (props) => props.column.id,
 		columns: [
-			columnHelper.accessor((row) => row.meta.createdAt, {
+			columnHelper.accessor((row) => row.meta?.createdAt, {
 				header: "Creation At",
 				size: 100,
 				footer: (props) => props.column.id,
 				cell: (info) => dateFormatter(info.getValue()),
 				sortingFn: (rowA, rowB) => {
 					return (
-						new Date(rowA.original.meta.createdAt).getTime() -
-						new Date(rowB.original.meta.createdAt).getTime()
+						new Date(rowA.original.meta?.createdAt).getTime() -
+						new Date(rowB.original.meta?.createdAt).getTime()
 					);
 				},
 			}),
-			columnHelper.accessor((row) => row.meta.updatedAt, {
+			columnHelper.accessor((row) => row.meta?.updatedAt, {
 				header: "Updated At",
 				footer: (props) => props.column.id,
 				cell: (info) => dateFormatter(info.getValue()),
 				sortingFn: (rowA, rowB) => {
 					return (
-						new Date(rowA.original.meta.updatedAt).getTime() -
-						new Date(rowB.original.meta.updatedAt).getTime()
+						new Date(rowA.original.meta?.updatedAt).getTime() -
+						new Date(rowB.original.meta?.updatedAt).getTime()
 					);
 				},
 			}),
