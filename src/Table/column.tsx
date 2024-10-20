@@ -148,10 +148,15 @@ export const column = [
 				cell: (info) => (
 					<div
 						style={{
+							margin:'auto',
+							textAlign:'center',
+							padding:'5px 10px',
+							borderRadius:'50px',
+							color:'white',
 							backgroundColor:
 								info.getValue() === "beauty"
-									? "lightgoldenrodyellow"
-									: "lightgreen",
+									? "goldenrod"
+									:info.getValue()==="groceries" ?"green":"brown",
 						}}
 					>
 						{info.getValue()}{" "}
